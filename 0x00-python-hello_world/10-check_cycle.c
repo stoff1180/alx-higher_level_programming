@@ -5,20 +5,18 @@
 /**
  * check_cycle - that checks if list is cyclical
  * @list: pointer to list tl check
- * Return: if cyclical 1, otherwise 0.
+ * Return: 0 if there is no cycle, 1 if there is a cycle
  */
 int check_cycle(listint_t *list)
 {
-	listin_t *slow = list;
-	listin_t *fast = list;
+	listin_t *s = list;
+	listin_t *f = list;
 
-	if (list == NULL)
-		return (0);
-	while (fast && fast->next)
+	while (f && f->next)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
-		if (slow == fast)
+		s = s->next;
+		f = f->next->next;
+		if (s == f)
 			return (1);
 	}
 	return (0);
