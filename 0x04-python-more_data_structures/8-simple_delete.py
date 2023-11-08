@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def simple_delete(a_dictionary, key=""):
-    if a_dictionary.get(key) is not None:
-        del a_dictionary[key]
-    return a_dictionary
+    if key in a_dictionary:
+        new_dict = {k: v for k, v in a_dictionary.items() if k != key}
+        return new_dict.copy()
+    return a_dictionary.copy()
