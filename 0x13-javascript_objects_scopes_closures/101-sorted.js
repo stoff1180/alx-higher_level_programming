@@ -1,15 +1,15 @@
 #!/usr/bin/node
-let = require('./101-data').dict;
+const dict = require('./101-data').dict;
 
-let totalist = Object.entries(dict);
-let vals = Object.values(dict);
-let valsUniq = [...new Set(vals)];
-let newDict = {};
-for (let j in valsUniq) {
-  let list = [];
-  for (let k in totalist) {
-    if (totalist[k][1] === valsUniq[j]) {
-      list.unshift(totalist[k][0]);
+const totaList = Object.entries(dict);
+const vals = Object.values(dict);
+const valsUniq = [...new Set(vals)];
+const newDict = {};
+for (const j in valsUniq) {
+  const list = [];
+  for (const i in totaList) {
+    if (totaList[i][1] === valsUniq[j]) {
+      list.unshift(totaList[i][0]);
     }
   }
   newDict[valsUniq[j]] = list;
