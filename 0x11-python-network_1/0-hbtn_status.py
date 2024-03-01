@@ -3,10 +3,9 @@
 Fetches https://alx-intranet.hbtn.io/status.
 Uses urlib package
 """
+import urllib.request
 
 if __name__ == '__main__':
-    import urllib.request
-
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
         content = res.read()
         print("Body response:")
