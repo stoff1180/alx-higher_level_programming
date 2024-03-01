@@ -10,7 +10,7 @@ import sys
 def main():
     username = sys.argv[1]
     access_token = sys.argv[2]
-    api_url = "https://api.github.com/user/{}".format(username)
+    api_url = "https://api.github.com/user".format()
     response = requests.get(api_url, auth=(username, access_token))
     user_data = response.json()
     if response.status_code == 200:
