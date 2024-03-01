@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-""" Fetches https://alx-intranet.hbtn.io/status using urlib package """
-
+"""
+Fetches https://alx-intranet.hbtn.io/status using urlib package
+"""
 import urllib.request
 
 if __name__ == '__main__':
