@@ -13,7 +13,8 @@ if __name__ == "__main__":
     api_url = "https://api.github.com/user"
     headers = {
             'Authorization': 'Bearer {}'.format(access_token),
-            'Accept': 'application/vnd.github.v3+json'
+            'Accept': 'application/vnd.github.v3+json',
+            "X-GitHub-Api-Version": "2022-11-28"
         }
 
     try:
