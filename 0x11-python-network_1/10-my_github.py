@@ -12,7 +12,7 @@ if __name__ == "__main__":
     access_token = sys.argv[2]
     api_url = "https://api.github.com/user"
     headers = {
-            'Authorization': 'Basic {}:{}'.format(username, access_token),
+            'Authorization': 'Bearer {}'.format(access_token),
             'Accept': 'application/vnd.github.v3+json'
         }
 
