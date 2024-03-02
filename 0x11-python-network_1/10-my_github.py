@@ -21,8 +21,6 @@ if __name__ == "__main__":
         if response.status_code == 200:
             user_data = response.json()
             user_id = user_data["id"]
-            print(user_id)
-        else:
-            print('{}'.format(response.status_code))
+            print('{}'.format(user_id))
     except Exception as e:
         print('{}'.format(e))
