@@ -12,7 +12,8 @@ if __name__ == "__main__":
     username = sys.argv[1]
     access_token = sys.argv[2]
     api_url = "https://api.github.com/user"
-    response = requests.get(api_url, auth=HTTPBasicAuth(username, access_token))
+    response = requests.get(api_url,
+                            auth=HTTPBasicAuth(username, access_token))
     try:
         user_data = response.json()
         user_id = user_data["id"]
