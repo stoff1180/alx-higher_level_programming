@@ -14,9 +14,9 @@ if __name__ == "__main__":
     api_url = "https://api.github.com/user"
     response = requests.get(api_url,
                             auth=HTTPBasicAuth(username, access_token))
-    try:
+    if response.status_code == 200:
         user_data = response.json()
         user_id = user_data["id"]
         print('{}'.format(user_id))
-    except :
+    else:
         print('None')
