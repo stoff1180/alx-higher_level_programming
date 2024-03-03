@@ -5,22 +5,17 @@ Uses the GitHub API to display your id
 """
 import requests
 import sys
+from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
     username = sys.argv[1]
     access_token = sys.argv[2]
     api_url = "https://api.github.com/user"
-    headers = {
-            'Authorization': 'Bearer {}'.format(access_token),
-            "X-GitHub-Api-Version": "2022-11-28"
-        }
-
+    response = requests.get(api_url, auth=HTTPBasicAuth(username, access_token))
     try:
-        response = requests.get(api_url, headers=headers)
-        if response.status_code == 200:
-            user_data = response.json()
-            user_id = user_data["id"]
-            print('{}'.format(user_id))
-    except Exception as e:
-        print('{}'.format(e))
+        user_data = response.json()
+        user_id = user_data["id"]
+        print(user_id)
+    except :
+        print('None')
