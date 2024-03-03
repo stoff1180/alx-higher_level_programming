@@ -16,6 +16,6 @@ if __name__ == "__main__":
     try:
         user_data = response.json()
         user_id = user_data["id"]
-        print(user_id)
+        print('{}'.format(user_id))
     except :
         print('None')
